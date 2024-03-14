@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="koko">
+	Hola mundo
+
+	<div class="container">
+		<div class="wrapper">
+             <div class="box img1">img1</div>
+			 <div class="box img2">img2</div>
+			 <div class="box img3">img3</div>
+			 <div class="box img4">img4</div>
+			 <div class="box img5">img5</div>
+			 <div class="box img6">img6</div>
+			 <div class="box img7">img7</div>
+			 <div class="box img8">img8</div>
+			 <div class="box img9">img9</div>
+			 <div class="box img10">img10</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+.wrapper{
+	display: grid;
+	grid-template-rows: 120px 120px 120px 120px;
+	grid-template-areas:
+	 "img1 img1 img2 img3"
+	 "img1 img1 img6 img6"
+	 "img4 img5 img6 img6"
+	 "img7 img8 img9 img10"
+	 ;
+}
+	.box{
+		display: flex;
+        font-family: verdana ;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		color: white;
+	}
+
+	.img1{
+		grid-area: img1;
+		background: orange;
+	}
+
+	.img2{
+		grid-area: img2;
+		background: rgb(30, 255, 0);
+	}
+
+	.img3{
+		grid-area: img3;
+		background: rgb(0, 170, 255);
+	}
+
+	.img4{
+		grid-area: img4;
+		background: rgb(208, 0, 255);
+	}
+
+
+	.img5{
+		grid-area: img5;
+		background: rgb(255, 0, 255);
+	}
+
+	.img6{
+		grid-area: img6;
+		background: rgb(255, 0, 179);
+	}
+
+	.img7{
+		grid-area: img7;
+		background: rgb(140, 255, 0);
+	}
+
+	.img8{
+		grid-area: img8;
+		background: goldenrod;
+	}
+
+	.img9{
+		grid-area: img9;
+		background: rgb(51, 0, 255);
+	}
+
+	.img10{
+		grid-area: img10;
+		background: rgb(32, 218, 196);
+	}
+
+
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

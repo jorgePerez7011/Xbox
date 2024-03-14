@@ -1,0 +1,90 @@
+---
+const { title } = Astro.props;
+
+const items = [{
+	icon: '',
+	name: 'opción 1'
+},
+{
+	icon: '',
+	name: 'opción 2'
+},
+{
+	icon: '',
+	name: 'opción 3'
+}]
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>Acá va el encabezado</header>
+		<div class="carrousel">Slider de imágenes</div>
+		<nav>
+			{
+				items.map((item) => <a href= "#" class="option">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M21 10a3.58 3.58 0 0 0-1.8-3 3.66 3.66 0 0 0-3.63-3.13 3.86 3.86 0 0 0-1 .13 3.7 3.7 0 0 0-5.11 0 3.86 3.86 0 0 0-1-.13A3.66 3.66 0 0 0 4.81 7 3.58 3.58 0 0 0 3 10a1 1 0 0 0-1 1 10 10 0 0 0 5 8.66V21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.34A10 10 0 0 0 22 11a1 1 0 0 0-1-1zM5 10a1.59 1.59 0 0 1 1.11-1.39l.83-.26-.16-.85a1.64 1.64 0 0 1 1.66-1.62 1.78 1.78 0 0 1 .83.2l.81.45.5-.77a1.71 1.71 0 0 1 2.84 0l.5.77.81-.45a1.78 1.78 0 0 1 .83-.2 1.65 1.65 0 0 1 1.67 1.6l-.16.85.82.28A1.59 1.59 0 0 1 19 10z"></path></svg>
+				{item.name}
+			</a>)
+			}
+			
+		</nav>
+
+		
+		<slot />
+	</body>
+</html>
+<style is:global>
+	.option{
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 80px;
+		height: 100%;
+		transition: background 300ms ease-in-out;
+
+		&:hover{
+			background: rgb(187, 74, 221);
+		}
+	}
+	nav{
+		background: rgb(145, 145, 252);
+		height: 60px;
+		display: flex;
+	}
+	header {
+		background: rgb(88, 117, 248);
+		height: 36px;
+	}
+	html, body {
+		font-family: system-ui, sans-serif;
+		padding: 0;
+		margin: 0;
+	}
+	.carrousel{
+		background: rgb(149, 241, 149);
+		height: 360px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+</style>
